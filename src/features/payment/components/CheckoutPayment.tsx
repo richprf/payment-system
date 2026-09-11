@@ -58,8 +58,8 @@ export function CheckoutPayment({ items, onPaid }: CheckoutPaymentProps) {
   }
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
-      <section className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">
+    <div className="grid items-start gap-6 lg:grid-cols-12">
+      <section className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7 lg:col-span-7 xl:col-span-8">
         <PaymentStepper
           current={state.step}
           onJump={(step) => dispatch({ type: "GO_TO", step })}
@@ -150,16 +150,18 @@ export function CheckoutPayment({ items, onPaid }: CheckoutPaymentProps) {
         ) : null}
       </section>
 
-      <PaymentSummary
-        items={items}
-        pricing={flow.pricing}
-        discountInput={state.discountInput}
-        discountError={state.discountError}
-        locked={busy || state.step === "result"}
-        onDiscountInput={(value) => dispatch({ type: "SET_DISCOUNT_INPUT", value })}
-        onApplyDiscount={() => flow.discount.apply(state.discountInput)}
-        onClearDiscount={() => flow.discount.clear()}
-      />
+      <div className="lg:col-span-5 xl:col-span-4">
+        <PaymentSummary
+          items={items}
+          pricing={flow.pricing}
+          discountInput={state.discountInput}
+          discountError={state.discountError}
+          locked={busy || state.step === "result"}
+          onDiscountInput={(value) => dispatch({ type: "SET_DISCOUNT_INPUT", value })}
+          onApplyDiscount={() => flow.discount.apply(state.discountInput)}
+          onClearDiscount={() => flow.discount.clear()}
+        />
+      </div>
     </div>
   );
 }

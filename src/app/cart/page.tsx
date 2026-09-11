@@ -42,7 +42,7 @@ export default function CartPage() {
   }
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
+    <div className="grid items-start gap-6 lg:grid-cols-[1fr_18rem]">
       <section className="rounded-3xl border border-slate-200 bg-white p-5">
         <h1 className="text-xl font-bold text-slate-900">سبد خرید</h1>
         <ul className="mt-4 divide-y divide-slate-100">
