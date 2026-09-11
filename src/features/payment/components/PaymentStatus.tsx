@@ -75,24 +75,24 @@ export function PaymentStatus({ outcome, processing, onRetry }: PaymentStatusPro
         </dl>
 
         <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:justify-center">
-          <a
+          <Link
             href={`/orders/${tx.id}`}
             className="rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-indigo-500"
           >
             مشاهده و چاپ رسید
-          </a>
-          <a
+          </Link>
+          <Link
             href="/orders"
             className="rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50"
           >
             تاریخچه سفارش‌ها
-          </a>
-          <a
+          </Link>
+          <Link
             href="/"
             className="rounded-xl px-4 py-2.5 text-sm font-medium text-slate-500 hover:text-slate-800"
           >
             بازگشت به فروشگاه
-          </a>
+          </Link>
         </div>
       </div>
     );
